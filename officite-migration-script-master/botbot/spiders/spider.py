@@ -152,19 +152,20 @@ class BotBotSpider(scrapy.Spider):
         # Try to look for a logo; if found, scrape and migrate.
         print('Scraping the logo  ...', flush=True)
         logger_friendly.info('Scraping the logo ...')
+
         # Get image
-        if response.css('.logo img'):
-            logo_src = response.css('.logo img').xpath('@src').extract_first()
+        if response.css('.logo__image'):
+            logo_src = response.css('.logo__image').xpath('@src').extract_first()
+
         else:
             logo_src = ''
+
+        print(logo_src, flush=True)
+        logger_friendly.info(logo_src)
+
         # Configure the logo component
         yield from self.parse_logo(logo_src=logo_src)
 
-        # Turn on all location and map components. Components show IB contact information by default.
-        print('Setting the locations and maps components to show the business location rather than the default.', flush=True)
-        logger_friendly.info('Setting the locations and maps components to show the business location rather than the default.')
-        yield from self.parse_locations()
-        yield from self.parse_maps()
 
         print('Scraping each web page found in the menu ..', flush=True)
         logger_friendly.info('Scraping each web page found in the menu ...')
@@ -186,13 +187,10 @@ class BotBotSpider(scrapy.Spider):
                           pass
                       # Extra check to ensure the domain name in the url is lowercase
     
-                      if 'articles/' in url:
+                      if 'articles/' in url or 'articles_dear_doctor/' in url:
                         continue
                       else:
                         pass
-
-                      print(url, flush=True)
-                      logger_friendly.info(url)
 
                       yield scrapy.Request(url, callback=self.parse_page)
                     else:
@@ -272,11 +270,6 @@ class BotBotSpider(scrapy.Spider):
         # Configure the logo component
         yield from self.parse_logo(logo_src=logo_src)
     
-        # Turn on all location and map components. Components show IB contact information by default.
-        print('Setting the locations and maps components to show the business location rather than the default.', flush=True)
-        logger_friendly.info('Setting the locations and maps components to show the business location rather than the default.')
-        yield from self.parse_locations()
-        yield from self.parse_maps()
     
         print('Scraping each web page found in the menu ..', flush=True)
         logger_friendly.info('Scraping each web page found in the menu ...')
@@ -390,12 +383,6 @@ class BotBotSpider(scrapy.Spider):
             pass
     
     
-        # Turn on all location and map components. Components show IB contact information by default.
-        print('Setting the locations and maps components to show the business location rather than the default.', flush=True)
-        logger_friendly.info('Setting the locations and maps components to show the business location rather than the default.')
-        yield from self.parse_locations()
-        yield from self.parse_maps()
-    
     
         # Scrape each web page in the menu.
         print('Scraping each web page found in the menu ...', flush=True)
@@ -501,11 +488,6 @@ class BotBotSpider(scrapy.Spider):
         yield from self.parse_logo(title=title, description=description, logo_src=logo_src)
     
     
-        # Turn on all location and map components. Components show IB contact information by default.
-        print('Setting the locations and maps components to show the business location rather than the default.', flush=True)
-        logger_friendly.info('Setting the locations and maps components to show the business location rather than the default.')
-        yield from self.parse_locations()
-        yield from self.parse_maps()
     
         print('Scraping each web page found in the menu ..', flush=True)
         logger_friendly.info('Scraping each web page found in the menu ...')
@@ -959,6 +941,7 @@ class BotBotSpider(scrapy.Spider):
     def put_logo(self, alias_name, access_token, site_id, title='', description='', logo_src=''):
         """PUT the business name, tagline, and logo image to SMBWEBMGR using its API.
         """
+
         headers = {'Content-Type':'application/json', 'Authorization':'Bearer ' + access_token}
         body = {'title': title,
                 'description': description,
@@ -1126,7 +1109,7 @@ class BotBotSpider(scrapy.Spider):
                 legacy_css_filenames.append(legacy_css_filename)
                 
 
-            yield self.put_css(legacy_css_filenames, self.access_token, self.site_id)
+            #yield self.put_css(legacy_css_filenames, self.access_token, self.site_id)
         else:
             pass
 
@@ -1173,6 +1156,8 @@ class BotBotSpider(scrapy.Spider):
             # Use path only--not the whole URL provided
             #      OLD               NEW
             # /services.html  ->  /services
+
+
             legacy_url_path = urlparse(legacy_url).path
             legacy_url_path = '/' +  legacy_url_path.split('/')[-1]
             if self.check_if_file(legacy_url):
@@ -1182,6 +1167,12 @@ class BotBotSpider(scrapy.Spider):
                 continue
             # Do not set a redirect for the home page
             elif legacy_url == self.website.url:
+                continue
+            #checks if the url is the home page without a trailing /
+            elif legacy_url == self.website.url[:-1]:
+                continue
+            #Do not set up redirects for articles
+            elif 'articles/' in legacy_url or 'articles_dear_doctor' in legacy_url:
                 continue
             # Redirect 'index.html' links to the base url home page
             elif 'index' in legacy_url:
@@ -1208,6 +1199,11 @@ class BotBotSpider(scrapy.Spider):
 
         seo_keywords = response.xpath('//meta[@name="keywords"]/@content').extract_first()
         seo_description = response.xpath('//meta[@name="description"]/@content').extract_first()
+
+
+
+
+
         # Make sure SEO keywords are no more than 10 comma seperated phrases and
         # less than 300 characters
         if seo_keywords:
@@ -1230,6 +1226,9 @@ class BotBotSpider(scrapy.Spider):
         regex_baystone_gallery = re.compile('baystonemedia.*?image\/gallery')
         regex_baystone_source = re.compile('gallery.*?slide')
     
+
+
+
         #loops through every link
         for link in soup.find_all(href=self.deny_links) + soup.find_all(src=self.deny_links):
             if link.name == 'a':
@@ -1296,6 +1295,7 @@ class BotBotSpider(scrapy.Spider):
                             link['src'] = self.editor_url[0:-15] + 'storage/app/media/' + path_mm_filename
                 #if not a file
                 else:
+                    
                     if self.check_if_relative(path):
                         path = self.make_absolute(path)
                         if path not in self.mapping_dict:
@@ -1304,10 +1304,7 @@ class BotBotSpider(scrapy.Spider):
                             logger_friendly.info(path)
 
 
-                            yield scrapy.Request(path, callback=self.parse_page) #-----------------------------------------------------------------------------------------------
-
-                            print(path + ' is parsed', flush=True)
-                            logger_friendly.info(path + ' is parsed')
+                            yield scrapy.Request(path, callback=self.parse_page)
 
                             # Rename path for how it will be created on smbwebmgr
                             path_path = urlparse(path).path
@@ -1346,10 +1343,13 @@ class BotBotSpider(scrapy.Spider):
                         else:
                             link['href'] = self.mapping_dict[path].split('/')[-1]
                     else:
+
+
                         if path not in self.mapping_dict:
 
-                            print(path + ' is parsed', flush=True)
-                            logger_friendly.info(path + ' is parsed')
+                            if 'https:' not in path or 'http:' not in path:
+                                continue
+
 
                             yield scrapy.Request(path, callback=self.parse_page)
                             # Rename path for how it will be created on smbwebmgr
@@ -1358,6 +1358,9 @@ class BotBotSpider(scrapy.Spider):
                             if '.' in path_uri:
                                 path_uri = path_uri.split('.')[0]
                             path_slug = slugify(path_uri)
+
+                            print(path_slug, flush=True)
+                            logger_friendly.info(path_slug)
     
                             if '-' not in path_slug:
                                 hyphen_slug = ''
@@ -1379,6 +1382,9 @@ class BotBotSpider(scrapy.Spider):
             else:
                 continue
     
+        
+
+
         # Instead of Officite legacy 'library' pages, go to the patient education.
         for link in soup.find_all(href=self.get_lib_links):
             link['href'] = 'articles'
@@ -1475,8 +1481,6 @@ class BotBotSpider(scrapy.Spider):
             page_url_dict = {request_url:url_slug}
             yield from self.create_redirects(page_url_dict)
 
-        print(soup.prettify(), flush=True)
-        logger_friendly.info(soup.prettify())
 
 
         yield self.post_page(title, url_slug, layout, soup.prettify(), seo_title, \

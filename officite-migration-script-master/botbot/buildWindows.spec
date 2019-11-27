@@ -3,7 +3,7 @@ gooey_root = os.path.dirname(gooey.__file__)
 gooey_languages = Tree(os.path.join(gooey_root, 'languages'), prefix = 'gooey/languages')
 gooey_images = Tree(os.path.join(gooey_root, 'images'), prefix = 'gooey/images')
 a = Analysis(['botbotgui.py'],
-             pathex=['C:\\Users\\bchiaramonti\\Desktop\\officite-migration-script-master\\officite-migration-script-master\\botbot', 'C:\\Program Files (x86)\\Windows Kits\\10\\Redist\\ucrt\\DLLs\\x86'],
+             pathex=['C:\\Users\\bchiaramonti\\.virtualenvs\\bchiaramonti-XTT3ch7o\\Scripts', 'C:\\Program Files (x86)\\Windows Kits\\10\\Redist\\10.0.18362.0\\ucrt\\DLLs\\x86'],
              hiddenimports=['botbot.spiders.spider'],
              hookspath=['.\\hooks\\'],
              runtime_hooks=None,
