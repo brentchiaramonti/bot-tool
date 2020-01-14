@@ -1,0 +1,176 @@
+INFO:scrapy.utils.log:Scrapy 1.8.0 started (bot: botbot)
+INFO:scrapy.utils.log:Versions: lxml 4.4.2.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.8.0 (tags/v3.8.0:fa919fd, Oct 14 2019, 19:21:23) [MSC v.1916 32 bit (Intel)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.18362-SP0
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publicsuffix.org:443
+DEBUG:urllib3.connectionpool:https://publicsuffix.org:443 "GET /list/public_suffix_list.dat HTTP/1.1" 200 None
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'botbot', 'DOWNLOAD_DELAY': 1, 'LOG_ENABLED': False, 'NEWSPIDER_MODULE': 'spiders', 'SPIDER_MODULES': ['spiders'], 'TELNETCONSOLE_ENABLED': False, 'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats', 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://smbwebmgr.internetbrands.com/api/sites/34738> (referer: None)
+INFO:logger_friendly:Found the website editor page for the given site ID.
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/> (referer: https://smbwebmgr.internetbrands.com/api/sites/34738)
+INFO:logger_friendly:Got the home page.
+INFO:logger_friendly:Got the home page. 2
+INFO:logger_friendly:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjA5NTNhYzExYjg1MDRmOTQxNzg3NDk5YzA3MDRiYmIyNzI1OWI5YTEiLCJqdGkiOiIwOTUzYWMxMWI4NTA0Zjk0MTc4NzQ5OWMwNzA0YmJiMjcyNTliOWExIiwiaXNzIjoiaHR0cHM6XC9cL2xvZ2luLm9mZmljaXRlLmNvbSIsImF1ZCI6InNtYnBvcnRhbGliYyIsInN1YiI6ImJjaGlhcmFtb250aUBvZmZpY2l0ZS5jb20iLCJleHAiOjE1NzgzNTk0MDEsImlhdCI6MTU3ODM1NTgwMSwidG9rZW5fdHlwZSI6IkJlYXJlciIsInNjb3BlIjoib3BlbmlkIGJyYW5kIiwiZW1haWwiOiJiY2hpYXJhbW9udGlAb2ZmaWNpdGUuY29tIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFmZmlsaWF0ZWFkbWluIl19LCJsZWdhY3lJZCI6MjI5MzEzLCJyZWFsbSI6Im9mZmljaXRlIiwidmVyc2lvbiI6MX0.OZhndfnWSAWdT10HMOoMyJDUoz9X6vbSpyk2dWYe25rKriII3dHaPhbH7Oa63RUn28u3ok42VbJpYVrHVX1_2tZcPTYOdVjwXfzKgUnf15tchcQOELJCibqAiHLxMXE4DtQhrbv58_vBHjlV-FJGgBokODIfBJNWtk_lASG89g8zNI-dVCMDFkF7PlmFtnz49ZUEQbMFMgpJQhR1Jk-O5qjWxajIHyAseWAOg05FMRg9CqS-bEUO_NP7NbJu0kYT2Z3Y0zfOCiXq3iDdaDj_EZ2REHLlNPniPOF4DGlsbsYa8XuG2o__ypOlU_RkazaYW7r7uTwtTBlfxjebYEm9bQ
+INFO:logger_friendly:Identified a Webmanager website
+INFO:logger_friendly:Configuring the navigaton component on smbwebmgr.
+INFO:logger_friendly:Scraping files found in menu links ...
+INFO:logger_friendly:The spider will now upload files in menu links to smbwebmgr.
+INFO:logger_friendly:Scraping legacy stylesheets ...
+INFO:logger_friendly:Creating 301 redirects for menu links ...
+INFO:logger_friendly:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjA5NTNhYzExYjg1MDRmOTQxNzg3NDk5YzA3MDRiYmIyNzI1OWI5YTEiLCJqdGkiOiIwOTUzYWMxMWI4NTA0Zjk0MTc4NzQ5OWMwNzA0YmJiMjcyNTliOWExIiwiaXNzIjoiaHR0cHM6XC9cL2xvZ2luLm9mZmljaXRlLmNvbSIsImF1ZCI6InNtYnBvcnRhbGliYyIsInN1YiI6ImJjaGlhcmFtb250aUBvZmZpY2l0ZS5jb20iLCJleHAiOjE1NzgzNTk0MDEsImlhdCI6MTU3ODM1NTgwMSwidG9rZW5fdHlwZSI6IkJlYXJlciIsInNjb3BlIjoib3BlbmlkIGJyYW5kIiwiZW1haWwiOiJiY2hpYXJhbW9udGlAb2ZmaWNpdGUuY29tIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFmZmlsaWF0ZWFkbWluIl19LCJsZWdhY3lJZCI6MjI5MzEzLCJyZWFsbSI6Im9mZmljaXRlIiwidmVyc2lvbiI6MX0.OZhndfnWSAWdT10HMOoMyJDUoz9X6vbSpyk2dWYe25rKriII3dHaPhbH7Oa63RUn28u3ok42VbJpYVrHVX1_2tZcPTYOdVjwXfzKgUnf15tchcQOELJCibqAiHLxMXE4DtQhrbv58_vBHjlV-FJGgBokODIfBJNWtk_lASG89g8zNI-dVCMDFkF7PlmFtnz49ZUEQbMFMgpJQhR1Jk-O5qjWxajIHyAseWAOg05FMRg9CqS-bEUO_NP7NbJu0kYT2Z3Y0zfOCiXq3iDdaDj_EZ2REHLlNPniPOF4DGlsbsYa8XuG2o__ypOlU_RkazaYW7r7uTwtTBlfxjebYEm9bQ
+INFO:logger_friendly:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjA5NTNhYzExYjg1MDRmOTQxNzg3NDk5YzA3MDRiYmIyNzI1OWI5YTEiLCJqdGkiOiIwOTUzYWMxMWI4NTA0Zjk0MTc4NzQ5OWMwNzA0YmJiMjcyNTliOWExIiwiaXNzIjoiaHR0cHM6XC9cL2xvZ2luLm9mZmljaXRlLmNvbSIsImF1ZCI6InNtYnBvcnRhbGliYyIsInN1YiI6ImJjaGlhcmFtb250aUBvZmZpY2l0ZS5jb20iLCJleHAiOjE1NzgzNTk0MDEsImlhdCI6MTU3ODM1NTgwMSwidG9rZW5fdHlwZSI6IkJlYXJlciIsInNjb3BlIjoib3BlbmlkIGJyYW5kIiwiZW1haWwiOiJiY2hpYXJhbW9udGlAb2ZmaWNpdGUuY29tIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFmZmlsaWF0ZWFkbWluIl19LCJsZWdhY3lJZCI6MjI5MzEzLCJyZWFsbSI6Im9mZmljaXRlIiwidmVyc2lvbiI6MX0.OZhndfnWSAWdT10HMOoMyJDUoz9X6vbSpyk2dWYe25rKriII3dHaPhbH7Oa63RUn28u3ok42VbJpYVrHVX1_2tZcPTYOdVjwXfzKgUnf15tchcQOELJCibqAiHLxMXE4DtQhrbv58_vBHjlV-FJGgBokODIfBJNWtk_lASG89g8zNI-dVCMDFkF7PlmFtnz49ZUEQbMFMgpJQhR1Jk-O5qjWxajIHyAseWAOg05FMRg9CqS-bEUO_NP7NbJu0kYT2Z3Y0zfOCiXq3iDdaDj_EZ2REHLlNPniPOF4DGlsbsYa8XuG2o__ypOlU_RkazaYW7r7uTwtTBlfxjebYEm9bQ
+INFO:logger_friendly:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjA5NTNhYzExYjg1MDRmOTQxNzg3NDk5YzA3MDRiYmIyNzI1OWI5YTEiLCJqdGkiOiIwOTUzYWMxMWI4NTA0Zjk0MTc4NzQ5OWMwNzA0YmJiMjcyNTliOWExIiwiaXNzIjoiaHR0cHM6XC9cL2xvZ2luLm9mZmljaXRlLmNvbSIsImF1ZCI6InNtYnBvcnRhbGliYyIsInN1YiI6ImJjaGlhcmFtb250aUBvZmZpY2l0ZS5jb20iLCJleHAiOjE1NzgzNTk0MDEsImlhdCI6MTU3ODM1NTgwMSwidG9rZW5fdHlwZSI6IkJlYXJlciIsInNjb3BlIjoib3BlbmlkIGJyYW5kIiwiZW1haWwiOiJiY2hpYXJhbW9udGlAb2ZmaWNpdGUuY29tIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFmZmlsaWF0ZWFkbWluIl19LCJsZWdhY3lJZCI6MjI5MzEzLCJyZWFsbSI6Im9mZmljaXRlIiwidmVyc2lvbiI6MX0.OZhndfnWSAWdT10HMOoMyJDUoz9X6vbSpyk2dWYe25rKriII3dHaPhbH7Oa63RUn28u3ok42VbJpYVrHVX1_2tZcPTYOdVjwXfzKgUnf15tchcQOELJCibqAiHLxMXE4DtQhrbv58_vBHjlV-FJGgBokODIfBJNWtk_lASG89g8zNI-dVCMDFkF7PlmFtnz49ZUEQbMFMgpJQhR1Jk-O5qjWxajIHyAseWAOg05FMRg9CqS-bEUO_NP7NbJu0kYT2Z3Y0zfOCiXq3iDdaDj_EZ2REHLlNPniPOF4DGlsbsYa8XuG2o__ypOlU_RkazaYW7r7uTwtTBlfxjebYEm9bQ
+INFO:logger_friendly:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjA5NTNhYzExYjg1MDRmOTQxNzg3NDk5YzA3MDRiYmIyNzI1OWI5YTEiLCJqdGkiOiIwOTUzYWMxMWI4NTA0Zjk0MTc4NzQ5OWMwNzA0YmJiMjcyNTliOWExIiwiaXNzIjoiaHR0cHM6XC9cL2xvZ2luLm9mZmljaXRlLmNvbSIsImF1ZCI6InNtYnBvcnRhbGliYyIsInN1YiI6ImJjaGlhcmFtb250aUBvZmZpY2l0ZS5jb20iLCJleHAiOjE1NzgzNTk0MDEsImlhdCI6MTU3ODM1NTgwMSwidG9rZW5fdHlwZSI6IkJlYXJlciIsInNjb3BlIjoib3BlbmlkIGJyYW5kIiwiZW1haWwiOiJiY2hpYXJhbW9udGlAb2ZmaWNpdGUuY29tIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFmZmlsaWF0ZWFkbWluIl19LCJsZWdhY3lJZCI6MjI5MzEzLCJyZWFsbSI6Im9mZmljaXRlIiwidmVyc2lvbiI6MX0.OZhndfnWSAWdT10HMOoMyJDUoz9X6vbSpyk2dWYe25rKriII3dHaPhbH7Oa63RUn28u3ok42VbJpYVrHVX1_2tZcPTYOdVjwXfzKgUnf15tchcQOELJCibqAiHLxMXE4DtQhrbv58_vBHjlV-FJGgBokODIfBJNWtk_lASG89g8zNI-dVCMDFkF7PlmFtnz49ZUEQbMFMgpJQhR1Jk-O5qjWxajIHyAseWAOg05FMRg9CqS-bEUO_NP7NbJu0kYT2Z3Y0zfOCiXq3iDdaDj_EZ2REHLlNPniPOF4DGlsbsYa8XuG2o__ypOlU_RkazaYW7r7uTwtTBlfxjebYEm9bQ
+INFO:logger_friendly:Scraping the logo ...
+INFO:logger_friendly:/0034741/storage/app/media/5c6e1e15a3f61_InternationalPokmonlogo.svg.png
+INFO:logger_friendly:Scraping each web page found in the menu ...
+DEBUG:scrapy.dupefilters:Filtered duplicate request: <GET https://my.officite.com/0034741/about-us> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping the home page ...
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/ ...
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/testimonials> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/testimonials ...
+DEBUG:scrapy.core.engine:Crawled (201) <PUT https://smbwebmgr.internetbrands.com/api/sites/34738/navigations/partial_nav> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (201) <PUT https://smbwebmgr.internetbrands.com/api/sites/34738/navigations/navigation_body> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/blog> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/blog ...
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/test> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/test ...
+DEBUG:scrapy.core.engine:Crawled (201) <PUT https://smbwebmgr.internetbrands.com/api/sites/34738/navigations/navigation_header> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/new-patients> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/new-patients ...
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/dental-services> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/dental-services ...
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/page_redirects/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/page_redirects/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/our-locations> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/our-locations ...
+INFO:logger_friendly:https://my.officite.com/0034741/appointment
+INFO:logger_friendly:/0034741/appointment
+INFO:logger_friendly:appointment
+INFO:logger_friendly:appointment
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/page_redirects/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/about-us> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/about-us ...
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/cerec> (referer: https://my.officite.com/0034741/)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/cerec ...
+INFO:logger_friendly:https://my.officite.com/0034741/anxiolysis
+INFO:logger_friendly:/0034741/anxiolysis
+INFO:logger_friendly:anxiolysis
+INFO:logger_friendly:anxiolysis
+INFO:logger_friendly:https://my.officite.com/0034741/arestin
+INFO:logger_friendly:/0034741/arestin
+INFO:logger_friendly:arestin
+INFO:logger_friendly:arestin
+INFO:logger_friendly:https://my.officite.com/0034741/before-anesthesia
+INFO:logger_friendly:/0034741/before-anesthesia
+INFO:logger_friendly:before-anesthesia
+INFO:logger_friendly:before-anesthesia
+INFO:logger_friendly:https://my.officite.com/0034741/biopsy
+INFO:logger_friendly:/0034741/biopsy
+INFO:logger_friendly:biopsy
+INFO:logger_friendly:biopsy
+INFO:logger_friendly:https://my.officite.com/0034741/after-impacted-tooth
+INFO:logger_friendly:/0034741/after-impacted-tooth
+INFO:logger_friendly:after-impacted-tooth
+INFO:logger_friendly:after-impacted-tooth
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/page_redirects/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://my.officite.com/0034741/> from <GET https://my.officite.com/0034741>
+DEBUG:scrapy.dupefilters:Filtered duplicate request: <GET https://my.officite.com/0034741/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/testimonials)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/after-impacted-tooth> (referer: https://my.officite.com/0034741/cerec)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/after-impacted-tooth ...
+INFO:logger_friendly:/0034741/after-impacted-tooth
+DEBUG:scrapy.core.engine:Crawled (201) <PUT https://smbwebmgr.internetbrands.com/api/sites/34738/logos/logo_footer> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/biopsy> (referer: https://my.officite.com/0034741/cerec)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/biopsy ...
+INFO:logger_friendly:/0034741/biopsy
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/blog)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/test)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/before-anesthesia> (referer: https://my.officite.com/0034741/cerec)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/before-anesthesia ...
+INFO:logger_friendly:/0034741/before-anesthesia
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/arestin> (referer: https://my.officite.com/0034741/cerec)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/arestin ...
+INFO:logger_friendly:/0034741/arestin
+INFO:logger_friendly:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjA5NTNhYzExYjg1MDRmOTQxNzg3NDk5YzA3MDRiYmIyNzI1OWI5YTEiLCJqdGkiOiIwOTUzYWMxMWI4NTA0Zjk0MTc4NzQ5OWMwNzA0YmJiMjcyNTliOWExIiwiaXNzIjoiaHR0cHM6XC9cL2xvZ2luLm9mZmljaXRlLmNvbSIsImF1ZCI6InNtYnBvcnRhbGliYyIsInN1YiI6ImJjaGlhcmFtb250aUBvZmZpY2l0ZS5jb20iLCJleHAiOjE1NzgzNTk0MDEsImlhdCI6MTU3ODM1NTgwMSwidG9rZW5fdHlwZSI6IkJlYXJlciIsInNjb3BlIjoib3BlbmlkIGJyYW5kIiwiZW1haWwiOiJiY2hpYXJhbW9udGlAb2ZmaWNpdGUuY29tIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFmZmlsaWF0ZWFkbWluIl19LCJsZWdhY3lJZCI6MjI5MzEzLCJyZWFsbSI6Im9mZmljaXRlIiwidmVyc2lvbiI6MX0.OZhndfnWSAWdT10HMOoMyJDUoz9X6vbSpyk2dWYe25rKriII3dHaPhbH7Oa63RUn28u3ok42VbJpYVrHVX1_2tZcPTYOdVjwXfzKgUnf15tchcQOELJCibqAiHLxMXE4DtQhrbv58_vBHjlV-FJGgBokODIfBJNWtk_lASG89g8zNI-dVCMDFkF7PlmFtnz49ZUEQbMFMgpJQhR1Jk-O5qjWxajIHyAseWAOg05FMRg9CqS-bEUO_NP7NbJu0kYT2Z3Y0zfOCiXq3iDdaDj_EZ2REHLlNPniPOF4DGlsbsYa8XuG2o__ypOlU_RkazaYW7r7uTwtTBlfxjebYEm9bQ
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/test)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/new-patients)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/dental-services)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/anxiolysis> (referer: https://my.officite.com/0034741/cerec)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/anxiolysis ...
+INFO:logger_friendly:/0034741/anxiolysis
+INFO:logger_friendly:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpZCI6IjA5NTNhYzExYjg1MDRmOTQxNzg3NDk5YzA3MDRiYmIyNzI1OWI5YTEiLCJqdGkiOiIwOTUzYWMxMWI4NTA0Zjk0MTc4NzQ5OWMwNzA0YmJiMjcyNTliOWExIiwiaXNzIjoiaHR0cHM6XC9cL2xvZ2luLm9mZmljaXRlLmNvbSIsImF1ZCI6InNtYnBvcnRhbGliYyIsInN1YiI6ImJjaGlhcmFtb250aUBvZmZpY2l0ZS5jb20iLCJleHAiOjE1NzgzNTk0MDEsImlhdCI6MTU3ODM1NTgwMSwidG9rZW5fdHlwZSI6IkJlYXJlciIsInNjb3BlIjoib3BlbmlkIGJyYW5kIiwiZW1haWwiOiJiY2hpYXJhbW9udGlAb2ZmaWNpdGUuY29tIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFmZmlsaWF0ZWFkbWluIl19LCJsZWdhY3lJZCI6MjI5MzEzLCJyZWFsbSI6Im9mZmljaXRlIiwidmVyc2lvbiI6MX0.OZhndfnWSAWdT10HMOoMyJDUoz9X6vbSpyk2dWYe25rKriII3dHaPhbH7Oa63RUn28u3ok42VbJpYVrHVX1_2tZcPTYOdVjwXfzKgUnf15tchcQOELJCibqAiHLxMXE4DtQhrbv58_vBHjlV-FJGgBokODIfBJNWtk_lASG89g8zNI-dVCMDFkF7PlmFtnz49ZUEQbMFMgpJQhR1Jk-O5qjWxajIHyAseWAOg05FMRg9CqS-bEUO_NP7NbJu0kYT2Z3Y0zfOCiXq3iDdaDj_EZ2REHLlNPniPOF4DGlsbsYa8XuG2o__ypOlU_RkazaYW7r7uTwtTBlfxjebYEm9bQ
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/new-patients)
+DEBUG:scrapy.core.engine:Crawled (201) <PUT https://smbwebmgr.internetbrands.com/api/sites/34738/logos/logo_home> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (201) <PUT https://smbwebmgr.internetbrands.com/api/sites/34738/logos/logo_header> (referer: https://my.officite.com/0034741/)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://my.officite.com/0034741/appointment> (referer: https://my.officite.com/0034741/our-locations)
+INFO:logger_friendly:Scraping https://my.officite.com/0034741/appointment ...
+INFO:logger_friendly:/0034741/appointment
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/our-locations)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/our-locations)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/about-us)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/cerec)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/cerec)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/cerec)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/after-impacted-tooth)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/after-impacted-tooth)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/biopsy)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/before-anesthesia)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/arestin)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/page_redirects/> (referer: https://my.officite.com/0034741/arestin)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/files/> (referer: https://my.officite.com/0034741/our-locations)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/anxiolysis)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/page_redirects/> (referer: https://my.officite.com/0034741/anxiolysis)
+DEBUG:scrapy.core.engine:Crawled (201) <POST https://smbwebmgr.internetbrands.com/api/sites/34738/pages/> (referer: https://my.officite.com/0034741/appointment)
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 108233,
+ 'downloader/request_count': 53,
+ 'downloader/request_method_count/GET': 17,
+ 'downloader/request_method_count/POST': 30,
+ 'downloader/request_method_count/PUT': 6,
+ 'downloader/response_bytes': 335052,
+ 'downloader/response_count': 53,
+ 'downloader/response_status_count/200': 16,
+ 'downloader/response_status_count/201': 36,
+ 'downloader/response_status_count/302': 1,
+ 'dupefilter/filtered': 2,
+ 'elapsed_time_seconds': 44.279653,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 1, 7, 0, 11, 6, 337857),
+ 'log_count/DEBUG': 55,
+ 'log_count/INFO': 73,
+ 'request_depth_max': 4,
+ 'response_received_count': 52,
+ 'scheduler/dequeued': 53,
+ 'scheduler/dequeued/memory': 53,
+ 'scheduler/enqueued': 53,
+ 'scheduler/enqueued/memory': 53,
+ 'start_time': datetime.datetime(2020, 1, 7, 0, 10, 22, 58204)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:logger_friendly:BOT Bot Ended

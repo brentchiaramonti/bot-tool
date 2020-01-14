@@ -7,7 +7,7 @@ from scrapy.loader import ItemLoader
 
 from bs4 import BeautifulSoup, SoupStrainer
 from slugify import slugify
-import wordninja
+
 
 import urllib.parse
 from urllib.parse import urlparse
@@ -16,6 +16,7 @@ import re
 # from unidecode import unidecode # no longer used
 import logging
 import pdb
+import wordninja
 
 logger_friendly = logging.getLogger('logger_friendly')
 logger_friendly.addHandler(logging.NullHandler())
@@ -62,6 +63,7 @@ class BotBotSpider(scrapy.Spider):
         """
         print('Got the home page.', flush=True)
         logger_friendly.info('Got the home page.')
+
         self.identify_brand(response)
     
         if self.website.brand == 'B':
@@ -160,8 +162,15 @@ class BotBotSpider(scrapy.Spider):
         else:
             logo_src = ''
 
+
+        if 'cdcssl.ibsrv.net' in logo_src: 
+            if self.website.url.endswith('/'):
+                logo_src = self.website.url + 'storage/app/media/' + logo_src.split('/')[-1]
+            else:
+                logo_src = self.website.url + '/storage/app/media/' + logo_src.split('/')[-1]
+
         print(logo_src, flush=True)
-        logger_friendly.info(logo_src)
+        logger_friendly.info(logo_src);
 
         # Configure the logo component
         yield from self.parse_logo(logo_src=logo_src)
@@ -897,6 +906,9 @@ class BotBotSpider(scrapy.Spider):
         TODO Open a JIRA to create an API endpoint so that CSS
         files are not served from the Media Manager.
         """
+
+
+
         headers = {'Content-Type':'application/json', 'Authorization':'Bearer ' + access_token}
         links_stylesheets = ""
         for css_file in css_file_list:
@@ -911,6 +923,7 @@ class BotBotSpider(scrapy.Spider):
     def post_redirect(self, legacy_url, smb_slug, access_token, site_id):
         """POST 301 redirects to smbwegmgr usings its API.
         """
+
         headers = {'Content-Type':'application/json', 'Authorization':'Bearer ' + access_token}
         body = {'type':'0', 'matchType':'0', 'fromUrl':legacy_url, 'toUrl':smb_slug}
         body = json.dumps(body, sort_keys=True)
@@ -1300,30 +1313,16 @@ class BotBotSpider(scrapy.Spider):
                         path = self.make_absolute(path)
                         if path not in self.mapping_dict:
 
-                            print(path, flush=True)
-                            logger_friendly.info(path)
-
-
                             yield scrapy.Request(path, callback=self.parse_page)
 
                             # Rename path for how it will be created on smbwebmgr
                             path_path = urlparse(path).path
 
-                            print(path_path, flush=True)
-                            logger_friendly.info(path_path)
-
-
                             path_uri = path_path.split('/')[-1]
                             if '.' in path_uri:
                                 path_uri = path_uri.split('.')[0]
 
-                            print(path_uri, flush=True)
-                            logger_friendly.info(path_uri)
-
                             path_slug = slugify(path_uri)
-
-                            print(path_slug, flush=True)
-                            logger_friendly.info(path_slug)
     
                             if '-' not in path_slug:
                                 hyphen_slug = ''
@@ -1359,8 +1358,6 @@ class BotBotSpider(scrapy.Spider):
                                 path_uri = path_uri.split('.')[0]
                             path_slug = slugify(path_uri)
 
-                            print(path_slug, flush=True)
-                            logger_friendly.info(path_slug)
     
                             if '-' not in path_slug:
                                 hyphen_slug = ''
@@ -1444,8 +1441,6 @@ class BotBotSpider(scrapy.Spider):
             path_path = urlparse(request_url).path
             path_uri = path_path.split('/')[-1]
 
-            print(path_path, flush=True)
-            logger_friendly.info(path_path)
 
 
             if '.' in path_uri:

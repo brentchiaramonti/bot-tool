@@ -29,7 +29,7 @@ from scrapy.utils.project import get_project_settings
 # Also using hook-scrapy.py to take care of the majority of import errors.
 import bs4
 import slugify
-import wordninja
+
 from spiders import spider
 from scrapy.settings import Settings
 # END: Redundant imports for Pyinstaller distribution
@@ -40,7 +40,7 @@ import urllib.parse
 import time
 import logging
 import pdb
-
+import wordninja
 ###########
 # Globals #
 ###########

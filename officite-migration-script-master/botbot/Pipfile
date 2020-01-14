@@ -4,7 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pyinstaller = "*"
 
 [packages]
 requests = "*"
@@ -16,7 +15,8 @@ tldextract = "*"
 wxpython = "*"
 gooey = "*"
 oauthlib = "*"
-nameduser = {file = "https://github.com/pyinstaller/pyinstaller/archive/develop.tar.gz"}
+buildwindows-spec = "*"
+pyinstaller = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"

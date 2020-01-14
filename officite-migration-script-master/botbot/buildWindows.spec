@@ -3,11 +3,11 @@ gooey_root = os.path.dirname(gooey.__file__)
 gooey_languages = Tree(os.path.join(gooey_root, 'languages'), prefix = 'gooey/languages')
 gooey_images = Tree(os.path.join(gooey_root, 'images'), prefix = 'gooey/images')
 a = Analysis(['botbotgui.py'],
-             pathex=['C:\\Users\\bchiaramonti\\.virtualenvs\\bchiaramonti-XTT3ch7o\\Scripts', 'C:\\Program Files (x86)\\Windows Kits\\10\\Redist\\10.0.18362.0\\ucrt\\DLLs\\x86'],
+             pathex=['C:\\Users\\brent\\.virtualenvs\\botbot-VrJrinlV\\Scripts', 'C:\\Program Files (x86)\\Windows Kits\\10\\Redist\\10.0.18362.0\\ucrt\\DLLs\\x86'],
              hiddenimports=['botbot.spiders.spider'],
              hookspath=['.\\hooks\\'],
              runtime_hooks=None,
-             datas=[('.\\spiders\\','.\\spiders\\'), ('.\\settings.py','.'),
+             datas=[('.\\spiders\\','.\\spider.py\\'), ('.\\settings.py','.'),
                     ('.\\scrapy.cfg','.'), ('.\\items.py','.'), ('.\\itemloaders.py','.'),
                     ('.\\middlewares.py','.'), ('.\\pipelines.py','.')
                    ]
@@ -28,8 +28,8 @@ exe = EXE(pyz,
           debug=False,
           strip=None,
           upx=True,
-          console=False,
-          windowed=True,
+          console=True,
+          windowed=False,
           icon=os.path.join(gooey_root, 'images', 'program_icon.ico'))
 
 #coll = COLLECT(exe,
