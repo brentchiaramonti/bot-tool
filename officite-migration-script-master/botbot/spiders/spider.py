@@ -155,6 +155,7 @@ class BotBotSpider(scrapy.Spider):
         print('Scraping the logo  ...', flush=True)
         logger_friendly.info('Scraping the logo ...')
 
+
         # Get image
         if response.css('.logo__image'):
             logo_src = response.css('.logo__image').xpath('@src').extract_first()
@@ -163,14 +164,13 @@ class BotBotSpider(scrapy.Spider):
             logo_src = ''
 
 
+
         if 'cdcssl.ibsrv.net' in logo_src: 
             if self.website.url.endswith('/'):
                 logo_src = self.website.url + 'storage/app/media/' + logo_src.split('/')[-1]
             else:
                 logo_src = self.website.url + '/storage/app/media/' + logo_src.split('/')[-1]
 
-        print(logo_src, flush=True)
-        logger_friendly.info(logo_src);
 
         # Configure the logo component
         yield from self.parse_logo(logo_src=logo_src)
@@ -911,9 +911,9 @@ class BotBotSpider(scrapy.Spider):
 
         headers = {'Content-Type':'application/json', 'Authorization':'Bearer ' + access_token}
         links_stylesheets = ""
-        for css_file in css_file_list:
-            links_stylesheets += '<link rel="stylesheet" type="text/css" href="'\
-                + self.editor_url[0:-15] + 'storage/app/media/' + css_file + '" />\n'
+        #for css_file in css_file_list:
+        #    links_stylesheets += '<link rel="stylesheet" type="text/css" href="'\
+        #        + self.editor_url[0:-15] + 'storage/app/media/' + css_file + '" />\n'
         body = {'headerTags': links_stylesheets}
         body = json.dumps(body, sort_keys=True)
     
@@ -1122,7 +1122,7 @@ class BotBotSpider(scrapy.Spider):
                 legacy_css_filenames.append(legacy_css_filename)
                 
 
-            #yield self.put_css(legacy_css_filenames, self.access_token, self.site_id)
+            yield self.put_css(legacy_css_filenames, self.access_token, self.site_id)
         else:
             pass
 
@@ -1506,6 +1506,7 @@ class BotBotSpider(scrapy.Spider):
             logo_filename = '/' + logo_filename
         else:
             pass
+
     
         yield self.put_logo('logo_header', self.access_token, self.site_id, title=title, \
                             description=description, logo_src=logo_filename)
