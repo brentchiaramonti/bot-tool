@@ -97,9 +97,9 @@ class BotBotSpider(scrapy.Spider):
             self.website.main_content_selector = '#content'
             print('Identified a TherapySites legacy site.', flush=True)
             logger_friendly.info('Identified a TherapySites legacy site.')
-        elif response.css('.editable__container--inner'):
+        elif response.css('.wrap__page-content--inner'):
             self.website.brand = 'W'
-            self.website.main_content_selector = '.editable__container--inner .editable__container--inner'
+            self.website.main_content_selector = '.wrap__page-content--inner'
             print('Identified a Webmanager website', flush=True)
             logger_friendly.info('Identified a Webmanager website')
         else:
