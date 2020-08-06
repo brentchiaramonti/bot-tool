@@ -97,7 +97,7 @@ class BotBotSpider(scrapy.Spider):
             self.website.main_content_selector = '#content'
             print('Identified a TherapySites legacy site.', flush=True)
             logger_friendly.info('Identified a TherapySites legacy site.')
-        elif response.css('.editable__container--inner'):
+        elif response.css('.wrap__page-content--inner'):
             self.website.brand = 'W'
             self.website.main_content_selector = '.wrap__page-content--inner'
             print('Identified a Webmanager website', flush=True)
@@ -113,9 +113,15 @@ class BotBotSpider(scrapy.Spider):
 
     def parse_home_W(self, response):
 
-        menu_scrapy_item = self.parse_navigation('#navigation_header > ul > li', \
-                            response)
+        menu_scrapy_item = None
+
+        if response.css('#navigation_header'):
+            menu_scrapy_item = self.parse_navigation('#navigation_header > ul > li', response)
+        else:
+            menu_scrapy_item = self.parse_navigation('#navigation_body > ul > li', response)
+
         menu = menu_scrapy_item['menu']
+
 
         # Configure the navigation component on smbwebmgr
         logger_friendly.info('Configuring the navigaton component on smbwebmgr.')
