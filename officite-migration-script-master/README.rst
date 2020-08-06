@@ -26,10 +26,11 @@ Target Websites
 * Officite SiteBuilder Legacy Websites.
 * Baystone Media ColdFusion/Binary Minds Legacy Websites.
 * TherapySites custinfo/CiNG Legacy Websites.
+* Webmanager websites from any brand.
 
 Features
 ========
-* Works on legacy websites from either of the three brands.
+* Works on legacy websites and webmanager websites from either of the three brands.
 * Migrates markup, SEO meta data, images, documents, and legacy CSS.  
 * Configures the SMB Web Manager navigation component.
 * Configures the SMB Web Manager logo component.
